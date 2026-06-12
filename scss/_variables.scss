@@ -1,0 +1,30 @@
+// ===== Brand palette (dark mode) =====
+$color-bg:        #0d0b10;
+$color-bg-alt:    #16121c;
+$color-surface:   #1e1827;
+$color-border:    #2c2438;
+
+$color-accent:        #472573;
+$color-accent-light:  #7a4bbf;
+$color-accent-soft:   rgba(122, 75, 191, 0.15);
+
+$color-text:       #f2f0f5;
+$color-text-muted: #a89fb8;
+
+$color-whatsapp: #25d366;
+
+// ===== Typography =====
+$font-heading: "Sora", sans-serif;
+$font-body:    "Inter", sans-serif;
+
+// ===== Layout =====
+$container-width: 1140px;
+$radius: 14px;
+$radius-sm: 10px;
+
+// ===== Breakpoints =====
+$bp-md: 768px;
+$bp-lg: 1024px;
+
+// ===== Transitions =====
+$ease: cubic-bezier(0.22, 1, 0.36, 1);

@@ -1,0 +1,12 @@
+{
+  "name": "312-motors-landing",
+  "version": "1.0.0",
+  "description": "Landing page for 312 Motors - mobile automotive diagnostics and repair in Bogota",
+  "scripts": {
+    "build": "sass scss/main.scss css/main.css --style=compressed --no-source-map",
+    "watch": "sass scss/main.scss css/main.css --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.80.0"
+  }
+}
