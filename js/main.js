@@ -1,8 +1,5 @@
 "use strict";
 
-// TODO: replace with the client's real WhatsApp number
-const WHATSAPP_NUMBER = "573000000000";
-
 // ===== Sticky header =====
 const header = document.getElementById("header");
 
@@ -101,43 +98,4 @@ document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el))
 
   render();
   restartAutoplay();
-})();
-
-// ===== Contact form -> WhatsApp =====
-(function initContactForm() {
-  const form = document.getElementById("contactForm");
-  if (!form) return;
-
-  const errorMsg = document.getElementById("formError");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let valid = true;
-    form.querySelectorAll("[required]").forEach((field) => {
-      const isEmpty = !field.value.trim();
-      field.classList.toggle("is-invalid", isEmpty);
-      if (isEmpty) valid = false;
-    });
-
-    errorMsg.hidden = valid;
-    if (!valid) return;
-
-    const data = new FormData(form);
-    const lines = [
-      "Hola 312 Motors, quiero agendar una cita.",
-      `Nombre: ${data.get("name")}`,
-      `Teléfono: ${data.get("phone")}`,
-      `Vehículo: ${data.get("vehicle")}`,
-      data.get("date") ? `Fecha preferida: ${data.get("date")}` : null,
-      `Descripción: ${data.get("message")}`,
-    ].filter(Boolean);
-
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
-    window.open(url, "_blank", "noopener");
-  });
-
-  form.querySelectorAll("[required]").forEach((field) => {
-    field.addEventListener("input", () => field.classList.remove("is-invalid"));
-  });
 })();
